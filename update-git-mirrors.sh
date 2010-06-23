@@ -9,7 +9,7 @@ DARCS_TO_GIT="$(readlink -f "$(dirname "$0")")/darcs-to-git"
 
 run() {
     LOG=$("$@" 2>&1)
-    if [[ $? -eq 0 ]]; then
+    if [[ $? -ne 0 ]]; then
         printf "$*\nfailed on project %s in update-git-mirrors.sh.\n\n%s" \
             "$PROJECT" "$LOG" | \
             mail -s "$(basename "$1") failed" github@christoph-d.de
