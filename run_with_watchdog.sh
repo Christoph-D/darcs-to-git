@@ -1,4 +1,5 @@
 #!/bin/bash
+# Imitates the program timeout from coreutils (>=7.5-1).
 
 if [[ $# -lt 2 ]]; then
     echo "Usage: $(basename $0) timeout_in_seconds commandline..."
