@@ -20,7 +20,7 @@ run() {
 
 for PROJECT in $PROJECTS; do
     cd "$BASE_DIR/$PROJECT"
-    run darcs pull
+    run darcs pull --all
     # Remove spurious empty files that remain when a previous pull
     # failed.
     run find . -maxdepth 1 -empty -name 'darcs*-new' -delete
